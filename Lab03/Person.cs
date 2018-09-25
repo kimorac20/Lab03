@@ -4,18 +4,25 @@ using System.Text;
 
 namespace Lab03
 {
-    class Person
+    public class Person
     {
         public string Name { get; set; }
+        public string LastName { get; set; }
 
-        public string GetName()
-        {
-            return Name;
-        }
 
-        public static string GetStaticName()
+        public virtual string GetSummary()
         {
-            return Name;
+            return string.Format("{0} {1}", Name, LastName);
         }
+        
+        //public string GetName()
+        //{
+        //    return Name;
+        //}
+
+        //public static string GetStaticName(string name)
+        //{
+        //    return name;
+        //}
     }
 }
