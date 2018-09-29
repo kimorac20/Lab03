@@ -6,12 +6,10 @@ namespace Ejercicio
 {
     class Credito:Cuenta
     {
-
-        public override void Vender(decimal m, int t)
+        public Credito(decimal saldo, List<string> registro)
+            : base(saldo, registro)
         {
-            base.Vender(m, t);
         }
-
 
     }
 }

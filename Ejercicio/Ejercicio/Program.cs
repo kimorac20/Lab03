@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Ejercicio
 {
@@ -7,17 +8,9 @@ namespace Ejercicio
         static void Main(string[] args)
         {
 
-            Credito cr = new Credito()
-            {
-                Saldo = 0,
-                Registro = new string[] { "Creación" }
-            };
+            Credito cr = new Credito(0, new List<string>() { "Creación" });
 
-            Debito db = new Debito()
-            {
-                Saldo = 10000,
-                Registro = new string[] { "Creación" }
-            };
+            Debito db = new Debito(10000, new List<string>() { "Creación" });
 
 
             Console.WriteLine("Digite el monto a debitar");
@@ -28,9 +21,26 @@ namespace Ejercicio
 
             int a = int.Parse(Console.ReadLine());
 
-            Cuenta cuenta = new Cuenta();
+            Cuenta cuenta = null;
+            switch (a)
+            {
+                case 1:
+                    cuenta = db;
+                    break;
+                case 2:
+                    cuenta = cr;
+                    break;
+
+                default:
+                    break;
+            }
 
             cuenta.Vender(x, a);
+
+            foreach (string r in cuenta.Registro)
+            {
+                Console.WriteLine(r);
+            }
 
             Console.ReadLine();
             
