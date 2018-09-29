@@ -41,6 +41,8 @@ namespace Ejercicio
             {
                 Console.WriteLine(r);
             }
+            Console.WriteLine("Saldo actual:" + cuenta.Saldo);
+
 
             Console.ReadLine();
             
